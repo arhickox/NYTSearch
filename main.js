@@ -41,7 +41,7 @@ $('document').ready(function () {
     });
 
     $('#clearBtn').on("click", function (){
-        $('#myForm')[0].reset();        // reset the fields
+        clear();           // call the clear function to clear all form fields
     });
     
 
@@ -58,6 +58,10 @@ function createElements (result) {
         $('#resultCard').append(newDiv);
     }
 }
+
+const clear = () => {               // ES6 arrow functions for the win!!!       
+    $('#myForm')[0].reset();        
+} 
 
 
 
