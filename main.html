@@ -1,22 +1,68 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!DOCTYPE html>
+<html>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="main.js"></script>
-  </head>
-  <body>
-      
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-  </body>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>NYT Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-3"><i class="fa fa-newspaper-o" aria-hidden="true"></i> New York Times</h1>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <i class="fa fa-navicon" aria-hidden="true"></i>Search Parameters
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Search Term:</label>
+                    <input type="text" class="form-control" id="searchTerm" placeholder="Type what you want to search">
+                </div>
+                <div class="col-auto my-1">
+                        <label class="mr-sm-2" for="inlineFormCustomSelect">Number of Refrences:</label>
+                        <select class="custom-select mr-sm-2" id="recordsRetrieved">
+                          <option selected>Choose...</option>
+                          <option value="1">5</option>
+                          <option value="2">10</option>
+                          <option value="3">15</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                        <label for="formGroupExampleInput">Start Year (Optional)</label>
+                        <input type="text" class="form-control" id="beginDate" placeholder="yyyymmdd">
+                </div>
+                <div class="form-group">
+                        <label for="formGroupExampleInput">End Year (Optional)</label>
+                        <input type="text" class="form-control" id="endDate" placeholder="yyyymmdd">
+                </div>
+            </form>
+            <button type="submit" id="searchBtn" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i> Search</button>
+            <button type="button" id="clearBtn" class="btn btn-primary"><i class="fa fa-trash-alt" aria-hidden="true"></i>Clear Filters</button>
+        </div>
+
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <i class="fa fa-newspaper-o" aria-hidden="true"></i> Featured Articles
+        </div>
+        <div class="card-body" id="resultCard">
+
+        </div>
+
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script src='main.js'></script>
+
 </html>
