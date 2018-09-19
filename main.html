@@ -27,11 +27,11 @@
             <form>
                 <div class="form-group">
                     <label for="formGroupExampleInput">Search Term:</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Type what you want to search">
+                    <input type="text" class="form-control" id="searchTerm" placeholder="Type what you want to search">
                 </div>
                 <div class="col-auto my-1">
                         <label class="mr-sm-2" for="inlineFormCustomSelect">Number of Refrences:</label>
-                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                        <select class="custom-select mr-sm-2" id="recordsRetrieved">
                           <option selected>Choose...</option>
                           <option value="1">5</option>
                           <option value="2">10</option>
@@ -40,11 +40,11 @@
                 </div>
                 <div class="form-group">
                         <label for="formGroupExampleInput">Start Year (Optional)</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="...">
+                        <input type="text" class="form-control" id="beginDate" placeholder="...">
                 </div>
                 <div class="form-group">
                         <label for="formGroupExampleInput">End Year (Optional)</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="...">
+                        <input type="text" class="form-control" id="endDate" placeholder="...">
                 </div>
             </form>
             <button type="submit" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i> Search</button>
