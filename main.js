@@ -36,7 +36,8 @@ function createElements (result) {
     for (let x = 0; x < result.response.docs.length; x++ ) {    // loop through all objects and display 
         newDiv.append(`<h3>${result.response.docs[x].headline.main}</h3>
             <p>${result.response.docs[x].byline.original}</p>
-            <p>${result.response.docs[x].snippet}</p>`);
+            <p>${result.response.docs[x].snippet}</p>
+            <a href=${result.response.docs[x].web_url} target="_blank">${result.response.docs[x].web_url}</a>`);
         $('#resultCard').append(newDiv);
     }
 }
