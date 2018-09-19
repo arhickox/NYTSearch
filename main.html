@@ -1,41 +1,68 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>NYT Search</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
-    crossorigin="anonymous">
+        crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-      
-</head>
-<body>
-   <div class="jumbotron jumbotron-fluid">
-       <div class="container">
-           <h1 class="display-3"><i class="fa fa-newspaper-o" aria-hidden="true"></i>  New York Times</h1>
-       </div>
-   </div>
-   <div class="card">
-       <div class="card-header">
-           <i class="fa fa-navicon" aria-hidden="true"></i>Search Parameters
-       </div>
-       <div class="card-body">
-           
-       </div>
-      
-   </div>
-   <div class="card">
-       <div class="card-header">
-           <i class="fa fa-newspaper-o" aria-hidden="true"></i> Featured Articles
-       </div>
-       <div class="card-body">
-           
-       </div>
 
-   </div>
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-3"><i class="fa fa-newspaper-o" aria-hidden="true"></i> New York Times</h1>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <i class="fa fa-navicon" aria-hidden="true"></i>Search Parameters
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Search Term:</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Type what you want to search">
+                </div>
+                <div class="col-auto my-1">
+                        <label class="mr-sm-2" for="inlineFormCustomSelect">Number of Refrences:</label>
+                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                          <option selected>Choose...</option>
+                          <option value="1">5</option>
+                          <option value="2">10</option>
+                          <option value="3">15</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                        <label for="formGroupExampleInput">Start Year (Optional)</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="...">
+                </div>
+                <div class="form-group">
+                        <label for="formGroupExampleInput">End Year (Optional)</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="...">
+                </div>
+            </form>
+            <button type="submit" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i> Search</button>
+            <button type="button" class="btn btn-primary"><i class="fa fa-trash-alt" aria-hidden="true"></i>Clear Filters</button>
+        </div>
+
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <i class="fa fa-newspaper-o" aria-hidden="true"></i> Featured Articles
+        </div>
+        <div class="card-body">
+
+        </div>
+
+    </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 <script src='main.js'></script>
+
 </html>
