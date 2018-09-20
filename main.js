@@ -1,4 +1,3 @@
-let url = "https://api.nytimes.com/svc/search/v2/articlesearch.json"
 let searchKey = '';
 let previous = '';
 let records;
@@ -12,10 +11,11 @@ $('document').ready(function () {
         searchKey = $('#searchTerm').val().trim()   // grabs the user's search term
         records = $('#records').val();
 
-        /*if (previous === searchKey) {
+        if (previous === searchKey) {
             page++;
-        }*/
+        }
 
+        let url = "https://api.nytimes.com/svc/search/v2/articlesearch.json"
         url += "?" + $.param({
             "api-key": "570821d2229143f680c8280a52df84d9",
             "q": searchKey,         
@@ -24,8 +24,6 @@ $('document').ready(function () {
             "end_date": $('#endDate').val().trim(),     // grabs the end date from the form
         });
 
-        let myResult;      // will store our response for future instances
-
         $.ajax({
             url: url,
             method: "GET",      // ajax GET method requests data from the nytimes API
@@ -33,14 +31,14 @@ $('document').ready(function () {
             console.log(result);    // log the response for debugging
             console.log('records ' + records);
             console.log('searchKey = ' + searchKey);
-            myResult = result;
+
             $('#resultCard').empty();
-            createElements(myResult);   // calls the createElements function to display the articles
+            createElements(result);   // calls the createElements function to display the articles
         }).fail(function(err) {
             throw err;
         }); 
         
-        //previous = searchKey;
+        previous = searchKey;
     });
 
     $('#clearBtn').on("click", function (){

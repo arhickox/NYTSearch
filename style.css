@@ -20,6 +20,11 @@ body {
     align-content: center;
 
 }
+
+.articles {
+    float: left;
+}
+
 .mainbox {
     background-color: black;
     opacity: 0.8;
