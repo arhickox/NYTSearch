@@ -5,6 +5,8 @@ let records;
 let page = 0;
 
 $('document').ready(function () {
+    var d = new Date();
+    document.getElementById("datenyt").innerHTML = d;
 
     $('#searchBtn').on('click', function () {
         searchKey = $('#searchTerm').val().trim()   // grabs the user's search term
