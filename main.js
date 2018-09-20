@@ -1,4 +1,3 @@
-let url = "https://api.nytimes.com/svc/search/v2/articlesearch.json"
 let searchKey = '';
 let previous = '';
 let records;
@@ -12,10 +11,13 @@ $('document').ready(function () {
         searchKey = $('#searchTerm').val().trim()   // grabs the user's search term
         records = $('#records').val();
 
-        /*if (previous === searchKey) {
-            page++;
-        }*/
+        if (previous === searchKey) {  
+            page++;                 // requests the next batch of articles if the 
+        } else {                    // user clicks the search button twice. Else
+            page = 0;               // if the search key is new, the page count resets
+        }
 
+        let url = "https://api.nytimes.com/svc/search/v2/articlesearch.json"
         url += "?" + $.param({
             "api-key": "570821d2229143f680c8280a52df84d9",
             "q": searchKey,         
@@ -24,22 +26,21 @@ $('document').ready(function () {
             "end_date": $('#endDate').val().trim(),     // grabs the end date from the form
         });
 
-        let myResult;      // will store our response for future instances
-
         $.ajax({
             url: url,
             method: "GET",      // ajax GET method requests data from the nytimes API
         }).done(function(result){
             console.log(result);    // log the response for debugging
             console.log('records ' + records);
-            myResult = result;
+            console.log('searchKey = ' + searchKey);
+
             $('#resultCard').empty();
-            createElements(myResult);   // calls the createElements function to display the articles
+            createElements(result);   // calls the createElements function to display the articles
         }).fail(function(err) {
             throw err;
         }); 
         
-        //previous = searchKey;
+        previous = searchKey;
     });
 
     $('#clearBtn').on("click", function (){
@@ -70,9 +71,8 @@ function createElements (result) {
     }
 }
 
-const clear = () => {               // ES6 arrow functions for the win!!!       
-    $('#myForm')[0].reset();        
-} 
+const clear = () => $('#myForm')[0].reset();    // ES6 arrow functions for the win!!!              
+
 
 
 
