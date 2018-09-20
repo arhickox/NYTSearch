@@ -30,6 +30,7 @@ $('document').ready(function () {
         }).done(function(result){
             console.log(result);    // log the response for debugging
             console.log('records ' + records);
+            console.log('searchKey = ' + searchKey);
             myResult = result;
             $('#resultCard').empty();
             createElements(myResult);   // calls the createElements function to display the articles
@@ -59,9 +60,8 @@ function createElements (result) {
     }
 }
 
-const clear = () => {               // ES6 arrow functions for the win!!!       
-    $('#myForm')[0].reset();        
-} 
+const clear = () => $('#myForm')[0].reset();    // ES6 arrow functions for the win!!!              
+
 
 
 
