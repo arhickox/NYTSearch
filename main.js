@@ -11,8 +11,10 @@ $('document').ready(function () {
         searchKey = $('#searchTerm').val().trim()   // grabs the user's search term
         records = $('#records').val();
 
-        if (previous === searchKey) {
-            page++;
+        if (previous === searchKey) {  
+            page++;                 // requests the next batch of articles if the 
+        } else {                    // user clicks the search button twice. Else
+            page = 0;               // if the search key is new, the page count resets
         }
 
         let url = "https://api.nytimes.com/svc/search/v2/articlesearch.json"
