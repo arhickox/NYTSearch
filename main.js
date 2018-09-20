@@ -53,10 +53,18 @@ function createElements (result) {
     let newDiv = $("<div>");        // create a new div for the response elements
 
     for (let x = 0; x < records; x++ ) {    // loop through all objects and display 
-        newDiv.append(`<h3>${result.response.docs[x].headline.main}</h3>
-            <p>${result.response.docs[x].byline.original}</p>
-            <p>${result.response.docs[x].snippet}</p>
-            <a href=${result.response.docs[x].web_url} target="_blank">${result.response.docs[x].web_url}</a>`);
+        newDiv.append(`
+        <div class="card" onclick="window.open('${result.response.docs[x].web_url}', '_blank');">
+        <div class="card-header">
+            <h2>${result.response.docs[x].headline.main}</h2>
+        </div>
+        <div class="card-body">
+            <h6 class="card-title">${result.response.docs[x].byline.original}</h6>
+            <h5 class="card-text">Snippet: ${result.response.docs[x].snippet}</h5>
+        </div>
+        </div>`);
+
+        
         $('#resultCard').append(newDiv);
     }
 }
