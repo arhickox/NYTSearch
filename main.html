@@ -14,54 +14,73 @@
 </head>
 
 <body>
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-3"><i class="fa fa-newspaper-o" aria-hidden="true"></i> New York Times</h1>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-header">
-            <i class="fa fa-navicon" aria-hidden="true"></i>Search Parameters
-        </div>
-        <div class="card-body">
-            <form id="myForm">
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Search Term:</label>
-                    <input type="text" class="form-control" id="searchTerm" placeholder="Type what you want to search">
+    <header id="nytlogo">
+        <img id="fit2print" src="images/nyt fit to print.jpg" alt="All the News Thats Fit to Print" height="106.22px" width="225px">
+        <img src="images/NYlogo.png" alt="New York Times Logo">
+        <img src="images/weather report.png" alt="Weather Report Pending..." id="fit2print" height="115px" width="230px">
+        <section>
+            <p id="datenyt"></p>
+        </section>
+    </header>
+    <div class="row justify-content-left">
+        <div class="col-lg-2 searchbox">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa fa-navicon" aria-hidden="true"></i> New York Times Article Search
                 </div>
-                <div class="col-auto my-1">
-                        <label class="mr-sm-2" for="inlineFormCustomSelect">Number of Records to Retrieve:</label>
-                        <select class="custom-select mr-sm-2" id="records">
-                          <option selected>Choose...</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="8">8</option>
-                          <option value="9">9</option>
-                          <option value="10">10</option>
-                        </select>
-                </div>
-                <div class="form-group">
-                        <label for="formGroupExampleInput">Start Year (Optional)</label>
-                        <input type="text" class="form-control" id="beginDate" placeholder="yyyymmdd">
-                </div>
-                <div class="form-group">
-                        <label for="formGroupExampleInput">End Year (Optional)</label>
-                        <input type="text" class="form-control" id="endDate" placeholder="yyyymmdd">
-                </div>
-            </form>
-            <button type="submit" id="searchBtn" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i> Search</button>
-            <button type="button" id="clearBtn" class="btn btn-primary"><i class="fa fa-trash-alt" aria-hidden="true"></i>Clear Filters</button>
-        </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form id="myForm">
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput">Search Term:</label>
+                                    <input type="text" class="form-control" id="searchTerm" placeholder="Type what you want to search">
+                                </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <label class="mr-sm-2" for="inlineFormCustomSelect">Number of Records to Retrieve:</label>
+                            <select class="custom-select mr-sm-2" id="records">
+                                <option selected>Choose...</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                        <div class="form-group dateBtn">
+                            <label for="formGroupExampleInput">Start Year (Optional)</label>
+                            <input type="text" class="form-control" id="beginDate" placeholder="yyyymmdd">
+                        </div>
+                        <div class="form-group dateBtn">
+                            <label for="formGroupExampleInput">End Year (Optional)</label>
+                            <input type="text" class="form-control" id="endDate" placeholder="yyyymmdd">
+                        </div>
+                        </form>
+                        <button type="submit" id="searchBtn" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i>
+                            Search</button>
+                        <button type="button" id="clearBtn" class="btn btn-primary"><i class="fa fa-trash-alt" aria-hidden="true"></i>Clear
+                            Filters
+                        </button>
+                    </div>
 
-    </div>
-    <div class="card">
-        <div class="card-header">
-            <i class="fa fa-newspaper-o" aria-hidden="true"></i> Featured Articles
+                </div>
+            </div>
         </div>
-        <div class="card-body" id="resultCard"></div>
-
     </div>
+    <hr>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa fa-newspaper-o" aria-hidden="true"></i> Your Articles, Your Interest, and All in One Place!
+                </div>
+                <div class="card-body" id="resultCard"></div>
+            </div>
+        </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 <script src='main.js'></script>
