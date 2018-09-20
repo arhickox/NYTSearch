@@ -62,7 +62,8 @@ function createElements (result) {
             <h6 class="card-title">${result.response.docs[x].byline.original}</h6>
             <h5 class="card-text">Snippet: ${result.response.docs[x].snippet}</h5>
         </div>
-        </div>`);
+        </div>
+        <br>`);
 
         
         $('#resultCard').append(newDiv);
